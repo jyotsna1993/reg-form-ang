@@ -1,0 +1,12 @@
+.card-header{
+    text-align: center;
+    color: blue;
+    font-size: 22px;
+}
+.card-body{
+    width: 60%;
+    margin: 0 auto;
+}
+.invalid-error{
+    color: red;
+}
