@@ -33,14 +33,10 @@ export class AppComponent implements OnInit {
                 Validators.pattern('^[a-zA-Z ]*$')
               ]
             ],
-            contactNumber: [
-              '', 
-              [
-                Validators.required,
-                Validators.minLength(10),
-                Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")
-              ]
-            ],
+           
+
+            cNumber: ['', [Validators.required, Validators.maxLength(10), Validators.pattern(/^[7-9][0-9]{0,9}$/)]],
+            
             email: ['', [Validators.required, Validators.email]],
             password: ['', [Validators.required, Validators.minLength(6)]],
             confirmPassword: ['', Validators.required]
