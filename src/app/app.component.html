@@ -33,13 +33,21 @@
                   </div>
               </div>
           </div>
-          <div class="form-group">
+        
+        <div class="form-group">
             <label>Contact Number</label>
-            <input type="text" formControlName="contactNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactNumber.errors }" />
-            <div *ngIf="submitted && f.contactNumber.errors && f.contactNumber.touched" class="invalid-error">
-                <div *ngIf="f.contactNumber.errors.required">Contact Number is required</div>
-                <div *ngIf="f.contactNumber.errors.pattern">Only Numbers</div>
-                <div *ngIf="f.contactNumber.errors.minlength">Minlength is 10 characters</div>
+            <input type="text" formControlName="cNumber" class="form-control" required />
+            <div *ngIf="f.cNumber.invalid && (f.cNumber.dirty || f.cNumber.touched)"
+            class="alert alert-danger">
+                <div *ngIf="f.cNumber.errors?.required">Contact Number is required</div>
+          
+                <div *ngIf="f.cNumber.errors?.maxlength">
+                  Contact Number Maximum 10 characters only
+                </div>
+                <div *ngIf="f.cNumber.errors?.pattern">
+                  Contact Number must be start with 9, 8, 7
+                </div>
+              
             </div>
         </div>
           <div class="form-group">
